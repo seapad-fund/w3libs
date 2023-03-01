@@ -1,7 +1,7 @@
 // Copyright (c) Web3 Labs, Inc.
 // SPDX-License-Identifier: Apache-2.0
 
-module w3lab::payment {
+module w3libs::payment {
     use sui::coin::Coin;
     use sui::sui::SUI;
     use sui::tx_context::TxContext;
