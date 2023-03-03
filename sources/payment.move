@@ -15,4 +15,14 @@ module w3libs::payment {
         assert!(coin::value(&base) > amount, 0);
         (coin::split(&mut base, amount, ctx), base)
     }
+
+    public fun take_from(coins: vector<Coin<SUI>>, amount: u64, ctx: &mut TxContext): Coin<SUI> {
+        let base = vec::pop_back(&mut coins);
+        pay::join_vec(&mut base, coins);
+        assert!(coin::value(&base) > amount, 0);
+        let expect = coin::split(&mut base, amount, ctx);
+        transfer::transfer(base, tx_context::sender(ctx));
+
+        expect
+    }
 }
