@@ -8,6 +8,8 @@ module w3libs::payment {
     use sui::pay;
     use sui::coin;
     use std::vector as vec;
+    use sui::tx_context;
+    use sui::transfer;
 
     public fun merge_and_split(coins: vector<Coin<SUI>>, amount: u64, ctx: &mut TxContext): (Coin<SUI>, Coin<SUI>) {
         let base = vec::pop_back(&mut coins);
@@ -16,7 +18,7 @@ module w3libs::payment {
         (coin::split(&mut base, amount, ctx), base)
     }
 
-    public fun take_from(coins: vector<Coin<SUI>>, amount: u64, ctx: &mut TxContext): Coin<SUI> {
+    public fun take_from<COIN>(coins: vector<Coin<COIN>>, amount: u64, ctx: &mut TxContext): Coin<COIN> {
         let base = vec::pop_back(&mut coins);
         pay::join_vec(&mut base, coins);
         assert!(coin::value(&base) > amount, 0);
