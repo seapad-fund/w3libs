@@ -1,3 +1,3 @@
 #[test_only]
-module seapad::payment_tests {
+module w3l::payment_tests {
 }
