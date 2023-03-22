@@ -1,6 +1,6 @@
 #[test_only]
 module w3libs::uq64x64_tests {
-    use uq64x64::uq64x64;
+    use w3libs::uq64x64;
 
     const MAX_U64: u64 = 18446744073709551615;
 
@@ -50,7 +50,7 @@ module w3libs::uq64x64_tests {
     }
 
     #[test]
-    #[expected_failure(abort_code = uq64x64::uq64x64::ERR_DIVIDE_BY_ZERO)]
+    #[expected_failure(abort_code = w3libs::uq64x64::ERR_DIVIDE_BY_ZERO)]
     fun test_fail_fraction() {
         let a = uq64x64::fraction(256, 0);
         uq64x64::to_u128(a);
@@ -66,7 +66,7 @@ module w3libs::uq64x64_tests {
 
 
     #[test]
-    #[expected_failure(abort_code = uq64x64::uq64x64::ERR_DIVIDE_BY_ZERO)]
+    #[expected_failure(abort_code = w3libs::uq64x64::ERR_DIVIDE_BY_ZERO)]
     fun test_fail_div() {
         let a = uq64x64::encode(1);
         uq64x64::div(a, 0);
