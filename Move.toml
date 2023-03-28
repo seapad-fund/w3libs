@@ -3,8 +3,8 @@ name = "W3libs"
 version = "0.0.1"
 
 [dependencies]
-Sui = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework", rev = "devnet" }
+Sui = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework/packages/sui-framework", rev = "devnet" }
 
 [addresses]
-w3libs =  "0xa9262420f2ec63aa03a78fcd77df2c0796ed92df"
+w3libs =  "0x00"
 sui =  "0x02"

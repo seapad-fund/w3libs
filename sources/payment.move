@@ -23,7 +23,7 @@ module w3libs::payment {
         pay::join_vec(&mut base, coins);
         assert!(coin::value(&base) > amount, 0);
         let expect = coin::split(&mut base, amount, ctx);
-        transfer::transfer(base, tx_context::sender(ctx));
+        transfer::public_transfer(base, tx_context::sender(ctx));
 
         expect
     }
