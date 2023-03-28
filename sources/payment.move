@@ -27,4 +27,9 @@ module w3libs::payment {
 
         expect
     }
+
+
+    #[test]
+    public fun test_payment() {
+    }
 }
