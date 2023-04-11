@@ -7,5 +7,5 @@ published-at = "0x4acd9a4821e4a60768a7bf4d25f6e7b6257d3e327f5aa479ee9c7678dc504c
 Sui = { git = "https://github.com/MystenLabs/sui", subdir = "crates/sui-framework/packages/sui-framework", rev = "devnet" }
 
 [addresses]
-w3libs =  "0x0"
+w3libs =  "0x4acd9a4821e4a60768a7bf4d25f6e7b6257d3e327f5aa479ee9c7678dc504ca7"
 sui =  "0x02"
