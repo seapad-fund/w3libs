@@ -20,17 +20,12 @@ module w3libs::payment {
 
     public fun take_from<COIN>(coins: vector<Coin<COIN>>, amount: u64, ctx: &mut TxContext): Coin<COIN> {
         let base = vec::pop_back(&mut coins);
-        let coin_take = if(coin::value(&base) == amount){
-            base;
-        } else {
-            pay::join_vec(&mut base, coins);
-            assert!(coin::value(&base) >= amount, 0);
-            let expect = coin::split(&mut base, amount, ctx);
-            transfer::public_transfer(base, tx_context::sender(ctx));
-            expect;
-        }
+        pay::join_vec(&mut base, coins);
+        assert!(coin::value(&base) >= amount, 0);
+        let expect = coin::split(&mut base, amount, ctx);
+        transfer::public_transfer(base, tx_context::sender(ctx));
 
-        coin_take
+        expect
     }
 
 
