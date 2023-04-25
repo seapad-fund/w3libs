@@ -359,6 +359,14 @@ module w3libs::u256 {
         as_u128(div(from_u128(a), from_u128(b)))
     }
 
+    public fun increment_u128(a: u128): u128 {
+        as_u128(add(from_u128(a), from_u128(1)))
+    }
+
+    public fun increment_u64(a: u64): u64 {
+        as_u64(add(from_u64(a), from_u64(1)))
+    }
+
     /// Binary xor `a` by `b`.
     fun bitxor(a: U256, b: U256): U256 {
         let ret = zero();
