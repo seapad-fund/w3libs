@@ -1,11 +1,11 @@
 [package]
 name = "W3libs"
 version = "0.0.1"
-published-at = "0xec03ea5869d81060f925312152e7096c723102cd977e572dd81550cc99c4f58e"
+published-at = "0xe272e36a1545eee43519afd793f891758a27b989dda62657000585219c31ff16"
 
 [dependencies]
 Sui = { git = "https://github.com/MystenLabs/sui", subdir = "crates/sui-framework/packages/sui-framework", rev = "testnet" }
 
 [addresses]
-w3libs =  "0xec03ea5869d81060f925312152e7096c723102cd977e572dd81550cc99c4f58e"
+w3libs =  "0xe272e36a1545eee43519afd793f891758a27b989dda62657000585219c31ff16"
 sui =  "0x02"
