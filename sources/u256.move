@@ -137,6 +137,24 @@ module w3libs::u256 {
         ret
     }
 
+    public fun add_u64(a: u64, b: u64): u64 {
+        as_u64(add(from_u64(a), from_u64(b)))
+    }
+
+    public fun add_u128(a: u128, b: u128): u128 {
+        as_u128(add(from_u128(a), from_u128(b)))
+    }
+
+    ///a*b + c
+    public fun mul_add(a: U256, b: U256, c: U256): U256 {
+        add(mul(a, b), c)
+    }
+
+    ///(a+b)*c
+    public fun add_mul(a: U256, b: U256, c: U256): U256 {
+        mul(add(a, b), c)
+    }
+
     /// Convert `U256` to `u128` value if possible (otherwise it aborts).
     public fun as_u128(a: U256): u128 {
         assert!(a.v2 == 0 && a.v3 == 0, ECAST_OVERFLOW);
@@ -248,6 +266,14 @@ module w3libs::u256 {
         r
     }
 
+    public fun mul_u64(a: u64, b: u64): u64 {
+        as_u64(mul(from_u64(a), from_u64(b)))
+    }
+
+    public fun mul_u128(a: u128, b: u128): u128 {
+        as_u128(mul(from_u128(a), from_u128(b)))
+    }
+
     /// Subtracts two `U256`, returns result.
     public fun sub(a: U256, b: U256): U256 {
         let ret = zero();
@@ -289,6 +315,14 @@ module w3libs::u256 {
         ret
     }
 
+    public fun sub_u64(a: u64, b: u64): u64 {
+        as_u64(sub(from_u64(a), from_u64(b)))
+    }
+
+    public fun sub_u128(a: u128, b: u128): u128 {
+        as_u128(sub(from_u128(a), from_u128(b)))
+    }
+
     /// Divide `a` by `b`.
     public fun div(a: U256, b: U256): U256 {
         let ret = zero();
@@ -325,6 +359,22 @@ module w3libs::u256 {
         };
 
         ret
+    }
+
+    public fun div_u64(a: u64, b: u64): u64 {
+        as_u64(div(from_u64(a), from_u64(b)))
+    }
+
+    public fun div_u128(a: u128, b: u128): u128 {
+        as_u128(div(from_u128(a), from_u128(b)))
+    }
+
+    public fun increment_u128(a: u128): u128 {
+        as_u128(add(from_u128(a), from_u128(1)))
+    }
+
+    public fun increment_u64(a: u64): u64 {
+        as_u64(add(from_u64(a), from_u64(1)))
     }
 
     /// Binary xor `a` by `b`.
