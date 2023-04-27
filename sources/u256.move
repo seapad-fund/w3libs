@@ -155,6 +155,38 @@ module w3libs::u256 {
         mul(add(a, b), c)
     }
 
+    ///a*b + c
+    public fun mul_add_u64(a: u64, b: u64, c: u64): u64 {
+        let a1 = from_u64(a);
+        let b1 = from_u64(b);
+        let c1 = from_u64(c);
+        as_u64(add(mul(a1, b1), c1))
+    }
+
+    ///(a+b)*c
+    public fun add_mul_u64(a: u64, b: u64, c: u64): u64 {
+        let a1 = from_u64(a);
+        let b1 = from_u64(b);
+        let c1 = from_u64(c);
+        as_u64(mul(add(a1, b1), c1))
+    }
+
+    ///a*b + c
+    public fun mul_add_u128(a: u128, b: u128, c: u128): u128 {
+        let a1 = from_u128(a);
+        let b1 = from_u128(b);
+        let c1 = from_u128(c);
+        as_u128(add(mul(a1, b1), c1))
+    }
+
+    ///(a+b)*c
+    public fun add_mul_u128(a: u128, b: u128, c: u128): u128 {
+        let a1 = from_u128(a);
+        let b1 = from_u128(b);
+        let c1 = from_u128(c);
+        as_u128(mul(add(a1, b1), c1))
+    }
+
     /// Convert `U256` to `u128` value if possible (otherwise it aborts).
     public fun as_u128(a: U256): u128 {
         assert!(a.v2 == 0 && a.v3 == 0, ECAST_OVERFLOW);
