@@ -1,6 +1,6 @@
 [package]
 name = "W3libs"
-version = "1.0.0"
+version = "1.0.1"
 published-at = "0x0ba8f8fabcc241c95a90829e3a989edb80bf76e48cfa1eca38972285fd894f98"
 
 [dependencies]
