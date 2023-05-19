@@ -1,4 +1,6 @@
-/// Standard math utilities missing in the Move Language.
+// Copyright (c) Web3 Labs, Inc.
+// SPDX-License-Identifier: GPL-3.0
+
 module w3libs::math128 {
 
     /// Return the largest of two numbers.
