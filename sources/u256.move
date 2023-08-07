@@ -1,3 +1,6 @@
+// Copyright (c) Web3 Labs, Inc.
+// SPDX-License-Identifier: GPL-3.0
+
 /// The implementation of large numbers written in Move language.
 /// Code derived from original work by Andrew Poelstra <apoelstra@wpsoftware.net>
 ///
